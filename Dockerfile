@@ -1,4 +1,5 @@
 FROM php:7.1-alpine
+ENV PHP_EXTRA_CONFIGURE_ARGS=" --enable-phpdbg "
 RUN apk upgrade --update \
     && apk add libmcrypt libmcrypt-dev libpng libpng-dev icu-libs icu-dev \
         postgresql-dev mysql-dev libxml2-dev sqlite-dev autoconf alpine-sdk libmemcached-dev cyrus-sasl-dev \
@@ -12,4 +13,4 @@ RUN apk upgrade --update \
         mysql-dev libxml2-dev sqlite-dev autoconf alpine-sdk cyrus-sasl-dev \
         libtool \
     && rm -rf /var/cache/apk/* \
-    && rm -rf /usr/src/php.tar.xz
+    && docker-php-source delete
