@@ -1,5 +1,5 @@
 FROM php:7.1-alpine
-ENV PHP_EXTRA_CONFIGURE_ARGS=" --enable-phpdbg "
+ENV PHP_EXTRA_CONFIGURE_ARGS=" --enable-phpdbg --with-gettext"
 RUN apk upgrade --update \
     && apk add libmcrypt libmcrypt-dev libpng libpng-dev icu-libs icu-dev \
         postgresql-dev mysql-dev libxml2-dev sqlite-dev autoconf alpine-sdk libmemcached-dev cyrus-sasl-dev \
