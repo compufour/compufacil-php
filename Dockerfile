@@ -8,10 +8,4 @@ RUN apk upgrade --update \
     && pecl install memcached-3.0.2 \
     && docker-php-ext-enable memcached \
     && pecl install imagick-3.4.3 \
-    && docker-php-ext-enable imagick #\
-    # && apk del libmcrypt-dev libpng-dev icu-dev \
-    #     mysql-dev libxml2-dev sqlite-dev autoconf alpine-sdk cyrus-sasl-dev \
-    #     libtool \
-    # && rm -rf /var/cache/apk/* \
-    # && docker-php-source delete
-
+    && docker-php-ext-enable imagick
